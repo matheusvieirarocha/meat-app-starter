@@ -10,13 +10,22 @@ export class ShoppingCartComponent implements OnInit {
 
   constructor(private shoppingcartService: ShoppingCartService) { }
 
+
   ngOnInit() {
   }
 
+  clear(){
+    this.shoppingcartService.clear()
+  }
   items(): any[]{
     return this.shoppingcartService.items
   }
-
+  removeItem(item:any){
+    this.shoppingcartService.removeItem(item)
+  }
+  addItem(item:any){
+    this.shoppingcartService.addItem(item)
+  }
   total(): number{
     return this.shoppingcartService.total()
   }
